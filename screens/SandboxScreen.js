@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 export default class SandboxScreen extends Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Hello world!</Text>
+      // Try removing the `flex: 1` on the parent View.
+      // The parent will not have dimensions, so the children can't expand.
+      // What if you add `height: 300` instead of `flex: 1`?
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
+        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
+        <View style={{flex: 3, backgroundColor: 'steelblue'}} />
       </View>
     );
   }
